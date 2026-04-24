@@ -39,10 +39,13 @@ $$x \times 10 \geq -2^{63}$$
 Porém, **não podemos fazer essa multiplicação diretamente** — é exatamente ela que queremos evitar, pois se $x$ for grande o suficiente, `x * 10` já estoura antes mesmo da comparação acontecer.
 
 A solução é isolar o x em cada condição, dividindo ambos os lados por 10. Fazemos isso separadamente para o limite superior e o limite inferior:
+
 $$x \times 10 \leq 2^{63} - 1 \implies x \leq \dfrac{2^{63} - 1}{10}$$
+
 $$x \times 10 \geq -2^{63} \implies x \geq \dfrac{-2^{63}}{10}$$
 
 Dessa forma, teremos o intervalo:
+
 $$\dfrac{-2^{63}}{10} \leq x \leq \dfrac{2^{63} - 1}{10}$$
 
 Agora a verificação é feita **apenas com divisão**, que é segura, e aí sim podemos realizar a multiplicação com segurança:
